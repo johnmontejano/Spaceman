@@ -31,7 +31,11 @@ def is_word_guessed(secret_word, letters_guessed):
         bool: True only if all the letters of secret_word are in letters_guessed, False otherwise
     '''
     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
-    pass
+    for letter in secret_word:
+        if letter not in letters_guessed:
+            return False
+        else:
+            return True
 
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -86,6 +90,9 @@ def spaceman(secret_word):
     # TODO: show the guessed word so far
 
     # TODO: check if the game has been won or lost
+
+    if __name__ == "__main__":
+        print(is_word_guessed("hello", "u"))
 
 
 # These function calls that will start the game
