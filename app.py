@@ -39,7 +39,6 @@ def is_word_guessed(secret_word, letters_guessed):
 
 
 def get_guessed_word(secret_word, letters_guessed):
-    word_length = len(secret_word)
     '''
     A function that is used to get a string showing the letters guessed so far in the secret word and underscores for letters that have not been guessed yet.
 
@@ -69,8 +68,10 @@ def is_guess_in_word(guess, secret_word):
 
     '''
     # TODO: check if the letter guess is in the secret word
-
-    pass
+    if guess in secret_word:
+        return True
+    else:
+        return False
 
 
 def spaceman(secret_word):
@@ -81,14 +82,19 @@ def spaceman(secret_word):
       secret_word (string): the secret word to guess.
 
     '''
-
+    guess = input("Enter a letter")
     # TODO: show the player information about the game according to the project spec
-
+    print("Guessed words so far: ")
     # TODO: Ask the player to guess one letter per round and check that it is only one letter
 
     # TODO: Check if the guessed letter is in the secret or not and give the player feedback
+    if is_guess_in_word(guess, secret_word):
+        print("Your input is correct.")
+    else:
+        print("Try again")
 
     # TODO: show the guessed word so far
+    print("letters guessed: ", guess)
 
     # TODO: check if the game has been won or lost
 
