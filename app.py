@@ -1,4 +1,4 @@
-import random
+import random, pytest
 
 
 def load_word():
@@ -111,13 +111,12 @@ def spaceman(secret_word):
             blanks = get_guessed_word(secret_word, correct_letter)
             print(f'Guessed word so far:   {blanks}')
         check_used_letters(used_letters)
-
-
+        
 secret_word = load_word()
 spaceman(secret_word)
 print("Play again?")
-answer = input("Enter Y/N: ")
+answer = input("Enter yes or no [Y/N]: ")
 while answer == "Y" or answer == "y":
     secret_word = load_word()
     spaceman(secret_word)
-    answer = input("Enter Y/N: ")
+    answer = input("Enter yes or no [Y/N]: ")
