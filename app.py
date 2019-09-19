@@ -111,7 +111,7 @@ def spaceman(secret_word):
             blanks = get_guessed_word(secret_word, correct_letter)
             print(f'Guessed word so far:   {blanks}')
         check_used_letters(used_letters)
-        
+
 secret_word = load_word()
 spaceman(secret_word)
 print("Play again?")
